@@ -4,7 +4,7 @@ from pharm_web.models import *
 
 # Определение размеров
 n_rangs = 4266
-n_j = 54
+n_j = 55
 n_k = 79
 
 files_all_iteractions = [
@@ -81,9 +81,16 @@ def load_data_in_file(BASE_DIR,file_name,nj):
     for k in range(1, n_k):
         rang1[0, k] = 0.0
     # Вычисление максимального ранга по эффектам для заданного набора ЛС
-
+    print('Ошибка', nj, n_k, n_j, rang1)
     for k in range(1, n_k):
-        rangsum[k] = sum(rang1[int(nj[m]), k] for m in range(n_j))
+        sum_rang=0
+        for m in range(1, n_j):
+            print(k, m, sum_rang, rang1[int(nj[m]), k])
+            sum_rang=sum_rang+rang1[int(nj[m]), k]
+        rangsum[k] = sum_rang
+        print('Ошибка', n_k, k, rangsum[k])
+        #rangsum[k] = sum(rang1[int(nj[m]), k] for m in range(n_j))
+
 
     # Максимальный ранг по совокупности эффектов
     ramax[0] = rangsum[0]

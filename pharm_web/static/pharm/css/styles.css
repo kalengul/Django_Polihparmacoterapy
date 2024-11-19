@@ -1,20 +1,345 @@
 html, body {
-    display: flex;
 	font-family: 'Arial';
 	margin: 0;
 	padding: 0;
 	height: 100%;
+	width: 100%;
+	background-color: #f6fbff;
 	color: #444;
 }
 
+div{
+	box-sizing: border-box;
+}
+
+.w-50{
+	width: 49%;
+}
+
+/* flex.css */
+.flex{
+    display: flex;
+}
+      
+.jc-center{
+    justify-content: center;
+}
+
+.jc-end{
+    justify-content: flex-end
+}
+
+.jc-sb{
+    justify-content: space-between
+}
+
+.jc-start{
+    justify-content: start;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.fs-column{
+	flex-direction: column;
+}
+
+.as-flst{
+	align-self: flex-start
+}
+
+/* nav.css */
+nav{
+    max-width: 100%;
+	position: relative ;
+	top: 0;
+	left: 0;
+	
+	background-color: #f6fbff;
+	box-shadow: 1px 1px 10px #bdc2c4;
+	z-index: 2;
+}
+
+.nav-ul{
+    list-style-type: none;
+    padding: 0; 
+    margin: 0;
+}
+
+.nav-li{
+    padding-left: 40px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    &:first-child{
+        padding-left: 0px;
+    }
+    &:hover{
+        cursor: pointer;
+        font-weight: 600;
+        color: var(#020F59);
+    }
+}
+
+nav>div{
+	padding: 0 3%;
+}
+
+.main-block{
+	z-index: 1;
+}
+
+.leftSidebar{
+	width: 20%;
+	min-height: 90vh;
+	max-height: 100%;
+
+	padding: 1% 2%;
+	background-color: #E9EFF2;
+	border-right: 1px solid #dfe5e7;
+}
+
+.content-block{
+	width: 80%;
+	padding: 1% 2%;
+}
+
+/* Кнопки */
+button{
+	padding: 1.5% 4%;
+	margin: 1.5% 0%;
+
+	background-color:#9dcdf8;
+	font-size: 16px;
+	font-weight: 600;
+
+	border-radius: 4px;
+	border: 1px solid #88a8b8;
+
+	box-shadow: 2px 2px 10px  rgba(151, 162, 175, 0.5), -2px -2px 5px #fff; ;
+
+	&:hover{
+		cursor: pointer;
+	}
+	&:active{
+        background-color: #9dc1e0;
+    }
+
+}
+
+.button_next{
+	
+	background-color: #a2f1a0;
+	border: 1px solid #87b486;
+
+	&:active{
+        background-color: #94de93;
+    }
+}
+
+.button_more{
+	/* width: 100px; */
+	width: auto;
+	box-sizing: border-box;
+	padding: 5px 20px;
+	background-color: #b9d2de;
+	box-shadow: 2px 2px 10px  rgba(151, 162, 175, 0.5);
+}
+
+/* form */
+
+.form-div{
+	margin-bottom: 2%;
+	
+}
+
+.form-label {
+    display: block;
+}
+
+
+/* input и select */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+	width: 45%;
+	display: block;
+	box-sizing: border-box; 
+	margin: 1% 0%;
+	padding: 1% 2%;
+
+	border-radius: 4px;
+	border: 1px solid #88a8b8;
+
+	&:focus{
+		outline: 1.1px solid #020F59;
+	}
+}
+
+select{
+	display: block;
+	width: 45%;
+	margin: 1% 0%;
+	padding: 1% 2%;
+
+	border-radius: 4px;
+	border: 1px solid #88a8b8;
+
+	&:focus{
+		outline: 1.1px solid #020F59;
+	}
+}
+
+/* Ссылки */
 a {
 	color: #0059b2;
 	text-decoration: none;
 }
 a:hover {
-	color: #CC0000;
+	color: #020F59;
 	text-decoration: underline;
 }
+
+
+/* формы для вода списков ЛС */
+.medicines-conteiner{
+	width: 100%;
+	box-sizing: border-box; 
+	margin-top: 1%;
+	padding: 2% 3%;
+	border-radius: 7px;
+	background-color: #e3edf5;
+}
+
+.medicines-conteiner>h1{
+	margin-top: 0;
+}
+
+.medicines-conteiner>form>input[type="text"]{
+	width: 100%;
+}
+
+ul:empty {
+    display: none;
+}
+
+#suggestions{
+	max-height: 30vh;
+	overflow: auto;
+
+	background-color: #f6fbff;
+	box-sizing: border-box; 
+	margin-top: 1%;
+	padding: 2% 3%;
+
+	border-radius: 7px;
+	border: 1px solid #88a8b8;
+}
+
+.medicines_ul:not(:has(li)) {
+	padding: 2% 1%; 
+
+	background-color:#94ea91;
+	border: 1.5px solid #659563;
+	border-radius: 7px;
+	box-shadow: 2px 2px 6px  rgba(151, 162, 175, 0.5), -2px -2px 5px #fff; 
+}
+
+
+.medicines_ul {
+	list-style: none;
+	width: 100%;
+	box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+.medicines_li, .div-result{
+	width: 100%;
+	box-sizing: border-box;
+
+    border: 1.3px solid #6e78b2;
+	border-radius: 7px;
+	box-shadow: 2px 2px 6px  rgba(151, 162, 175, 0.5), -2px -2px 5px #fff;
+}
+
+.div-result{
+	margin-bottom: 2%;
+}
+
+h4{
+	margin: 0;
+	font-weight: 500;
+}
+
+h2{
+	margin: 0;
+}
+
+p{
+	margin: 0;
+}
+
+.li-pad{
+	padding: 2% 1%;
+}
+
+.full-border-radius{
+	border-radius: 7px !important;
+}
+
+.warning-h{
+	font-size: 1.5rem;
+	font-weight: 800;
+	margin: 0;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.interaction_description_attentively {
+    background-color:#fbfd94;
+    border-radius: 7px 7px 0 0 ;
+	margin-bottom: 1%;
+}
+
+.interaction_description_serious {
+    background-color:#f86262;
+    border-radius: 7px 7px 0 0 ;
+	margin-bottom: 1%;
+}
+
+.interaction_description_insignificant {
+    background-color:#94ea91;
+	border-radius: 7px 7px 0 0 ;
+	margin-bottom: 1%;
+}
+
+.div-infoblock{
+	padding: 1% 2%;
+}
+
+.div-li:not(:has(li)){
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+/* ---------------------------Старый код-------------------------------- */
+/* --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- */
+
+
 
 img {max-width: 600px; height: auto;}
 
@@ -44,7 +369,7 @@ p.link-read-post a {
 div.article-panel {
     background: #eee;
     padding: 5px 10px 5px 10px;
-    box-sizing border-box;
+    box-sizing: border-box;
     overflow: hidden;
     color: #555;
 }
@@ -67,6 +392,7 @@ ul.list-articles li {
 }
 
 .table-page {
+	width: 100%;
 	height: 100%;
 	vertical-align: top;
 }
@@ -121,12 +447,12 @@ ul.langitem {
 }
 ul.langitem li {
 	margin: 10px 0 0 0;
-
+	width: 100%;
 }
 ul.langitem li.image {
 	margin: 0;
 	text-align: center;
-
+	width: 100%;
 	height: 250px;
 	overflow: hidden;
 }
@@ -153,6 +479,7 @@ div.button {
 }
 
 .table-content {
+	width: 100%;
 	min-height: 100%;
 	height: 100%;
 }
@@ -189,19 +516,19 @@ div.button {
 	margin: 0 20px 0 0;
 }
 .left-chapters ul li.share a.share-yt {
-
+	width: 100%;
 	height: 30px;
 	background: url('../images/share_yt.png') no-repeat 0 0
 }
 .left-chapters ul li.share a.share-yt:hover {
-
+	width: 100%;
 	height: 30px;
 	background: url('../images/share_yt.png') no-repeat 0 -30px
 }
 
 .content {
 	padding: 40px 20px 20px 40px;
-
+	width: 100%;
 	box-sizing: border-box;
 }
 
@@ -231,7 +558,7 @@ ul.control {
 	list-style: none;
 	font-family: Sans-serif, Arial, Tahoma;
 	font-size: 18px;
-
+	width: 100%;
 }
 ul.control li {	float: left; padding: 0 0 0 10px;}
 ul.control li.first:before {content: "\2190"; padding: 0 10px 0 0;}
@@ -269,7 +596,7 @@ ul.lang-list {
 	margin: 0;
 	padding: 14px 0 0 0;
 	background: #3F4137;
-
+	width: 100%;
 	height: 50px;
 	border-top: 1px solid #959A82;
 	box-sizing: border-box;
@@ -333,7 +660,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 }
 .highlight p { margin: 0; }
 .highlight .block {
-
+	width: 100%;
 	margin: 0;
 }
 .highlight .block p { margin: 0; }
@@ -366,11 +693,6 @@ ul.lang-list li a:hover {color: #fdc073;}
     font-size: 16px;
 }
 
-.form-label {
-    min-width: 150px;
-    vertical-align: top;
-}
-
 .form-error ul {
     list-style: none;
     padding: 0;
@@ -385,7 +707,7 @@ ul.lang-list li a:hover {color: #fdc073;}
 .table{
 	border: 1px solid #eee;
 	table-layout: fixed;
-
+	width: 100%;
 	margin-bottom: 20px;
 }
 .table th {
@@ -417,114 +739,31 @@ ul.lang-list li a:hover {color: #fdc073;}
     background-color: #f2f2f2;
 }
 
-.container {
-}
 
-.medicines {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  border: 4px solid #000000;
-  background-color: #96c7ef;
-  padding: 20px;
-}
 
-.medicines h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.input_medicines{
-  display: flex;
-  width: calc(100% - 20px); /* Учитываем отступы */
-  padding: 10px; /* Внутренние отступы для удобства */
-  margin: 0 10px; /* Отступы слева и справа */
-  box-sizing: border-box; /* Учитываем отступы и границы в ширине */
-  font-size: 24px;
-}
 
-.button_next{
-  margin: 0 auto;
-  display: block;
-  background-color: #30c651;
-  height: 74px;
-  width: 242px;
-  border-radius: 90px;
-  border: 4px solid #000000;
-  font-size: 24px;
-}
 
-.medicines_ul {
-    margin: 1rem;
-    border: 4px solid #000000;
-    list-style: none;
-    background-color:#6CC15E;
+/* .interaction_description_contraindicated {
+    background-color:#FF0000;
     font-size: 20px;
-    overflow: hidden;
-    padding: 20px;
-}
+} */
 
-.medicines_li {
-    margin: 1rem;
-    border: 1px solid #D9D9D9;
-    list-style: none;
-    background-color:#d9d9d9;
-    font-size: 20px;
-    overflow: hidden;
-}
-.interaction_description_insignificant {
-    background-color:#77DD77;
-    font-size: 20px;
-    padding: 10px;
-}
 
-.interaction_description_attentively {
-    background-color:#FFD700;
-    font-size: 20px;
-    padding: 10px;
-}
 
-.interaction_description_contraindicated {
-    background-color:#FF3535;
-    font-size: 20px;
-    padding: 10px;
-}
-
-.interaction_description_serious {
-    background-color:#FF6F61;
-    font-size: 20px;
-    padding: 10px;
-}
-
-.interaction_with {
-    border: 1px solid #000000;
-    padding: 0px;
-}
-
-.interaction_with_h2 {
-    margin: 0px;
-}
 
 .interaction_description {
     border: 1px solid #000000;
     padding: 0px;
 }
 
-.interaction-container {
+/* .interaction-container {
         display: flex;
         justify-content: space-between;
-        gap: 20px; /* Расстояние между колонками */
-    }
-.interaction_description_serious,
-.interaction_description_attentively {
-    flex: 1; /* Позволяет колонкам занимать равное пространство */
-    min-width: 250px; /* Минимальная ширина для колонок */
-    border-radius: 8px; /* Скругленные углы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для эффекта поднятия */
-}
-    ul {
+        gap: 20px;
+    } */
+
+	ul {
         list-style-type: none; /* Убираем маркеры списка */
         padding: 0; /* Убираем отступы */
     }

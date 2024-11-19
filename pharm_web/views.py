@@ -20,7 +20,7 @@ from .viewsAdd import *
 from .Fortran_to_Python_IPM import *
 
 menu = [{'title': "Главная", 'url_name': 'home'},
-        {'title': "Добавить данные в БД", 'url_name': 'add_page'},
+        {'title': "Добавить данные", 'url_name': 'add_page'},
         ]
 
 add_menu = [{'name_model': "Добавить группу ЛС", 'pk': "1", 'url_name': 'add_DrugGroup'},
@@ -58,13 +58,14 @@ def aboutpage_views(request):
     return render(request, 'pharm/index.html', context=context)
 
 
+
 def addDrugGroup_views(request):
     form = addDrugGroup(request)
     context = {
         'add_element': add_menu,
         'menu': menu,
         'form': form,
-        'title': 'Добавить данные в БД',
+        'title': 'Добавление новой группы ЛС',
         'add_element_selected': 0,
     }
     return render(request, 'pharm/addDrugGroup.html', context=context)
@@ -76,7 +77,7 @@ def addDrug_views(request):
         'add_element': add_menu,
         'menu': menu,
         'form': form,
-        'title': 'Добавить данные в БД',
+        'title': 'Добавление нового ЛС',
         'add_element_selected': 0,
     }
     return render(request, 'pharm/addDrugGroup.html', context=context)
@@ -119,7 +120,7 @@ def show_model_views(request, ml_model_slug):
         context.update(medscape_out_date(request))
         return render(request, 'pharm/vivod_medscape.html', context=context)
     elif ml_model_slug == 'polifarmakoterapiya-fortran':
-        #context.update({'polypharma_files': files_all_iteractions})
+        context.update({'polypharma_files': files_all_iteractions})
         context.update(go_all_iteractions(request,settings.BASE_DIR))
         context.update(iteraction_medscape_out(request))
         context.update(iteraction_medscape_two_drugs(request))
